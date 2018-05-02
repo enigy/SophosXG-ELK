@@ -1,4 +1,4 @@
-curl -X PUT "10.173.201.60:9200/_template/sophos_xg" -H 'Content-Type: application/json' -d'
+curl -X PUT "localhost:9200/_template/sophos_xg" -H 'Content-Type: application/json' -d'
 {
   "index_patterns": ["sophos_xg*"],
 	"settings": {
