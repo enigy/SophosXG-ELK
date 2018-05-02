@@ -1,0 +1,67 @@
+input {
+  tcp {
+    port => 6000
+    type => syslog
+  }
+  udp {
+    port => 6000
+    type => syslog
+  }
+}
+
+filter {
+  if [type] == "syslog" {
+    mutate {
+      gsub => [
+#     replace all "= " with na
+      "message", "= ", "=n/a "
+      ]
+    }
+    kv {
+      id => "sophos_kv"
+      source => "message"
+      trim_key => " "
+      trim_value => " "
+      value_split => "="
+      field_split => " "
+    }
+
+    #now check if source IP is a private IP, if so, tag it   
+    cidr {
+      add_tag => [ "src_internalIP" ]
+      address => [ "%{src_ip}" ]
+      network => [ "10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16" ]
+    }
+    
+    # don't run geoip if it's internalIP, otherwise find the GEOIP location
+    if "src_internalIP" not in [tags] {
+      geoip {
+        add_tag => [ "src_geoip" ]
+        source => "src_ip"
+      }
+    } 
+	else {
+      #check DST IP now.  If it is a private IP, tag it 
+      cidr {
+        add_tag => [ "dst_internalIP" ]
+        address => [ "%{dst_ip}" ]
+        network => [ "10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16" ]
+      }
+    
+      # don't run geoip if it's internalIP, otherwise find the GEOIP location
+      if "dst_internalIP" not in [tags] {
+        geoip {
+          add_tag => [ "dst_geoip" ]
+          source => "dst_ip"
+        }
+      }
+    }
+  }
+}
+
+output {
+  elasticsearch { 
+    hosts => ["localhost:9200"] 
+    index => "sophos_xg-%{+YYYY.MM.dd}"
+  }
+}
