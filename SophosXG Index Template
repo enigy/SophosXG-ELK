@@ -1,301 +1,15 @@
 curl -X PUT "localhost:9200/_template/sophos_xg" -H 'Content-Type: application/json' -d'
 {
-  "index_patterns": ["sophos_xg*"],
-	"settings": {
-		"number_of_shards": 5,
-		"number_of_replicas": 0
-	},
-	"mappings": {
-		"doc": {
-			"properties": {
-				"<29>device": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"<30>device": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"@timestamp": {
-					"type": "date"
-				},
-				"@version": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"Configuration": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"Reports": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"Signature": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"Temp": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"appfilter_policy_id": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"application": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"application_category": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"application_risk": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"application_technology": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"appresolvedby": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"category": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"category_type": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"collisions": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"connevent": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"connid": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"contenttype": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"date": {
-					"type": "date"
-				},
-				"device_id": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"device_name": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"domain": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"dst_country_code": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"dst_ip": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"dst_port": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"dstzone": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"dstzonetype": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"duration": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"exceptions": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"free": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"fw_rule_id": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"geoip": {
+	{
+	  "index_patterns": ["sophos_xg*"],
+		"settings": {
+			"number_of_shards": 5,
+			"number_of_replicas": 0
+			},
+			"mappings": {
+				"doc": {
 					"properties": {
-						"city_name": {
+						"<29>device": {
 							"type": "text",
 							"fields": {
 								"keyword": {
@@ -304,7 +18,7 @@ curl -X PUT "localhost:9200/_template/sophos_xg" -H 'Content-Type: application/j
 								}
 							}
 						},
-						"continent_code": {
+						"<30>device": {
 							"type": "text",
 							"fields": {
 								"keyword": {
@@ -313,7 +27,10 @@ curl -X PUT "localhost:9200/_template/sophos_xg" -H 'Content-Type: application/j
 								}
 							}
 						},
-						"country_code2": {
+						"@timestamp": {
+							"type": "date"
+						},
+						"@version": {
 							"type": "text",
 							"fields": {
 								"keyword": {
@@ -322,7 +39,7 @@ curl -X PUT "localhost:9200/_template/sophos_xg" -H 'Content-Type: application/j
 								}
 							}
 						},
-						"country_code3": {
+						"Configuration": {
 							"type": "text",
 							"fields": {
 								"keyword": {
@@ -331,7 +48,7 @@ curl -X PUT "localhost:9200/_template/sophos_xg" -H 'Content-Type: application/j
 								}
 							}
 						},
-						"country_name": {
+						"Reports": {
 							"type": "text",
 							"fields": {
 								"keyword": {
@@ -340,10 +57,28 @@ curl -X PUT "localhost:9200/_template/sophos_xg" -H 'Content-Type: application/j
 								}
 							}
 						},
-						"dma_code": {
+						"Signature": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"Temp": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"appfilter_policy_id": {
 							"type": "long"
 						},
-						"ip": {
+						"application": {
 							"type": "text",
 							"fields": {
 								"keyword": {
@@ -352,16 +87,7 @@ curl -X PUT "localhost:9200/_template/sophos_xg" -H 'Content-Type: application/j
 								}
 							}
 						},
-						"latitude": {
-							"type": "float"
-						},
-						"location": {
-                            "type": "geo_point"
-                        },
-						"longitude": {
-							"type": "float"
-						},
-						"postal_code": {
+						"application_category": {
 							"type": "text",
 							"fields": {
 								"keyword": {
@@ -370,7 +96,16 @@ curl -X PUT "localhost:9200/_template/sophos_xg" -H 'Content-Type: application/j
 								}
 							}
 						},
-						"region_code": {
+						"application_risk": {
+							"type": "integer",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"application_technology": {
 							"type": "text",
 							"fields": {
 								"keyword": {
@@ -379,7 +114,476 @@ curl -X PUT "localhost:9200/_template/sophos_xg" -H 'Content-Type: application/j
 								}
 							}
 						},
-						"region_name": {
+						"appresolvedby": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"category": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"category_type": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"collisions": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"connevent": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"connid": {
+							"type": "long"
+						},
+						"contenttype": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"date": {
+							"type": "date"
+						},
+						"device_id": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"device_name": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"domain": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"dst_country_code": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"dst_ip": {
+							"type": "ip"
+						},
+						"dst_port": {
+							"type": "integer"
+						},
+						"dstzone": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"dstzonetype": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"duration": {
+							"type": "long"
+						},
+						"exceptions": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"free": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"fw_rule_id": {
+							"type": "integer"
+						},
+						"geoip": {
+							"properties": {
+								"city_name": {
+									"type": "text",
+									"fields": {
+										"keyword": {
+											"type": "keyword",
+											"ignore_above": 256
+										}
+									}
+								},
+								"continent_code": {
+									"type": "text",
+									"fields": {
+										"keyword": {
+											"type": "keyword",
+											"ignore_above": 256
+										}
+									}
+								},
+								"country_code2": {
+									"type": "text",
+									"fields": {
+										"keyword": {
+											"type": "keyword",
+											"ignore_above": 256
+										}
+									}
+								},
+								"country_code3": {
+									"type": "text",
+									"fields": {
+										"keyword": {
+											"type": "keyword",
+											"ignore_above": 256
+										}
+									}
+								},
+								"country_name": {
+									"type": "text",
+									"fields": {
+										"keyword": {
+											"type": "keyword",
+											"ignore_above": 256
+										}
+									}
+								},
+								"dma_code": {
+									"type": "long"
+								},
+								"ip": {
+									"type": "ip"
+								},
+								"latitude": {
+									"type": "float"
+								},
+								"location": {
+									"type": "geo_point"
+								},
+								"longitude": {
+									"type": "float"
+								},
+								"postal_code": {
+									"type": "text",
+									"fields": {
+										"keyword": {
+											"type": "keyword",
+											"ignore_above": 256
+										}
+									}
+								},
+								"region_code": {
+									"type": "text",
+									"fields": {
+										"keyword": {
+											"type": "keyword",
+											"ignore_above": 256
+										}
+									}
+								},
+								"region_name": {
+									"type": "text",
+									"fields": {
+										"keyword": {
+											"type": "keyword",
+											"ignore_above": 256
+										}
+									}
+								},
+								"timezone": {
+									"type": "text",
+									"fields": {
+										"keyword": {
+											"type": "keyword",
+											"ignore_above": 256
+										}
+									}
+								}
+							}
+						},
+						"hb_health": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"host": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"iap": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"icmp_code": {
+							"type": "integer"
+						},
+						"icmp_type": {
+							"type": "integer"
+						},
+						"idle": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"in_interface": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"interface": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"ips_policy_id": {
+							"type": "integer"
+						},
+						"log_component": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"log_id": {
+							"type": "long"
+						},
+						"log_subtype": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"log_type": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"message": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"out_interface": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"policy_type": {
+							"type": "integer"
+						},
+						"priority": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"protocol": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"receiveddrops": {
+							"type": "long"
+						},
+						"receivederrors": {
+							"type": "long"
+						},
+						"receivedkbits": {
+							"type": "long"
+						},
+						"recv_bytes": {
+							"type": "long"
+						},
+						"recv_pkts": {
+							"type": "long"
+						},
+						"sent_bytes": {
+							"type": "long"
+						},
+						"sent_pkts": {
+							"type": "long"
+						},
+						"src_country_code": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"src_ip": {
+							"type": "ip"
+						},
+						"src_mac": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"src_port": {
+							"type": "integer"
+						},
+						"srczone": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"srczonetype": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"status": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"status_code": {
+							"type": "integer"
+						},
+						"system": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"tags": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"time": {
 							"type": "text",
 							"fields": {
 								"keyword": {
@@ -396,487 +600,143 @@ curl -X PUT "localhost:9200/_template/sophos_xg" -H 'Content-Type: application/j
 									"ignore_above": 256
 								}
 							}
-						}
-					}
-				},
-				"hb_health": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"host": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"iap": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"icmp_code": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"icmp_type": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"idle": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"in_interface": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"interface": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"ips_policy_id": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"log_component": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"log_id": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"log_subtype": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"log_type": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"message": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"out_interface": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"policy_type": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"priority": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"protocol": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"receiveddrops": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"receivederrors": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"receivedkbits": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"recv_bytes": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"recv_pkts": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"sent_bytes": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"sent_pkts": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"src_country_code": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"src_ip": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"src_mac": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"src_port": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"srczone": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"srczonetype": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"status": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"status_code": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"system": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"tags": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"time": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"timezone": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"total_memory": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"tran_dst_ip": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"tran_dst_port": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"tran_src_ip": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"tran_src_port": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"transactionid": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"transmitteddrops": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"transmittederrors": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"transmittedkbits": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"type": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"unit": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"url": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"used": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"user": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"user_agent": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
-						}
-					}
-				},
-				"users": {
-					"type": "text",
-					"fields": {
-						"keyword": {
-							"type": "keyword",
-							"ignore_above": 256
+						},
+						"total_memory": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"tran_dst_ip": {
+							"type": "ip"
+						},
+						"tran_dst_port": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"tran_src_ip": {
+							"type": "ip"
+						},
+						"tran_src_port": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"transactionid": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"transmitteddrops": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"transmittederrors": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"transmittedkbits": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"type": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"unit": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"url": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"used": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"user": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"user_agent": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"users": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
 						}
 					}
 				}
-			}
+			},
+			"aliases": {}
 		}
 	}
 }'
