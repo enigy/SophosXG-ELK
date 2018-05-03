@@ -13,8 +13,8 @@ filter {
   if [type] == "syslog" {
     mutate {
       gsub => [
-#     replace all "= " with na
-      "message", "= ", "=n/a "
+#     replace all "= " with double quotes to truly indicate no value
+      "message", "= ", '="" '
       ]
     }
     kv {
