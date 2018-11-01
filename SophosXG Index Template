@@ -259,6 +259,15 @@ curl -X PUT "localhost:9200/_template/sophos_xg" -H 'Content-Type: application/j
                     },
                     "geoip": {
                         "properties": {
+                            "as_org": {
+                              "type": "keyword"
+                            },
+                            "asn": {
+                              "type": "keyword"
+                            },
+                            "autonomous_system": {
+                             "type": "keyword"
+                            },
                             "city_name": {
                                 "type": "text",
                                 "fields": {
