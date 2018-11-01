@@ -258,6 +258,7 @@ curl -X PUT "localhost:9200/_template/sophos_xg" -H 'Content-Type: application/j
                         "type": "integer"
                     },
                     "geoip": {
+                        "dynamic": "true",
                         "properties": {
                             "as_org": {
                               "type": "keyword"
